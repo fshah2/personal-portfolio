@@ -8,7 +8,6 @@ import ReactMarkdown, { type Components } from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeSlug from 'rehype-slug';
 import { CodeBlock } from '@/components/blog/code-block';
-import { umamiTrackProps } from '@/lib/analytics';
 import {
   getVideoMimeType,
   isVideoSource,
@@ -187,13 +186,6 @@ export function Markdown({
       return <li className='pl-2 leading-relaxed'>{children}</li>;
     },
     a({ href, children }) {
-      const isExternal = !!href && /^https?:\/\//i.test(href);
-      const trackingProps = isExternal
-        ? umamiTrackProps('outbound-link', {
-            url: href!,
-            location: 'article',
-          })
-        : {};
       return (
         <a
           href={href}
@@ -203,8 +195,7 @@ export function Markdown({
             variant === 'secondary'
               ? 'text-secondary hover:underline'
               : 'text-cyan hover:underline'
-          }
-          {...trackingProps}>
+          }>
           {children}
         </a>
       );

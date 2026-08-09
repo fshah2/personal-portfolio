@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { umamiTrackProps, type UmamiEventData } from '@/lib/analytics';
 
 interface CTAButtonProps {
   href?: string;
@@ -13,8 +12,6 @@ interface CTAButtonProps {
   inverted?: boolean;
   accent?: 'primary' | 'secondary';
   className?: string;
-  trackEvent?: string;
-  trackData?: UmamiEventData;
 }
 
 const baseStyles =
@@ -34,8 +31,6 @@ export const CTAButton = ({
   inverted = false,
   accent = 'primary',
   className,
-  trackEvent,
-  trackData,
 }: CTAButtonProps) => {
   const hoverStyles =
     accent === 'secondary'
@@ -55,7 +50,6 @@ export const CTAButton = ({
   );
 
   const styles = cn(baseStyles, colorStyles, className);
-  const trackingProps = trackEvent ? umamiTrackProps(trackEvent, trackData) : {};
 
   if (href && external) {
     return (
@@ -63,8 +57,7 @@ export const CTAButton = ({
         href={href}
         target='_blank'
         rel='noopener noreferrer'
-        className={styles}
-        {...trackingProps}>
+        className={styles}>
         {content}
       </a>
     );
@@ -72,18 +65,14 @@ export const CTAButton = ({
 
   if (href) {
     return (
-      <Link href={href} className={styles} {...trackingProps}>
+      <Link href={href} className={styles}>
         {content}
       </Link>
     );
   }
 
   return (
-    <button
-      type={type ?? 'button'}
-      onClick={onClick}
-      className={styles}
-      {...trackingProps}>
+    <button type={type ?? 'button'} onClick={onClick} className={styles}>
       {content}
     </button>
   );

@@ -20,7 +20,6 @@ A personal portfolio site built with Next.js 16, React 19, Tailwind CSS 4, shadc
 - shadcn/ui and Radix primitives
 - Framer Motion
 - `react-markdown`, `remark-gfm`, and `rehype-slug`
-- Umami analytics
 
 ## Getting Started
 
@@ -93,19 +92,6 @@ pnpm build:content
 - `components/ui/` contains generated shadcn/ui primitives.
 - `lib/data/` contains server-only content loading helpers.
 - `scripts/build-content.mjs` mirrors content assets and generates `public/llms.txt`.
-
-## Umami Tracking
-
-Umami is loaded in `app/layout.tsx` when `NEXT_PUBLIC_UMAMI_ID` is available. The shared tracking helpers live in `lib/analytics.ts`:
-
-- `umamiTrackProps(eventName, data)` adds `data-umami-event` attributes for click tracking.
-- `trackEvent(eventName, data)` calls `window.umami?.track()` for manual events.
-
-Set the Umami website ID with:
-
-```bash
-NEXT_PUBLIC_UMAMI_ID=your-umami-website-id
-```
 
 ## Notes
 

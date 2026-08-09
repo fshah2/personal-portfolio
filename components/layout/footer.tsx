@@ -67,12 +67,7 @@ export function Footer() {
                   key={link.href}
                   href={link.href}
                   external
-                  className='text-white! hover:text-primary!'
-                  trackEvent='social-click'
-                  trackData={{
-                    network: link.label.toLowerCase(),
-                    location: 'footer',
-                  }}>
+                  className='text-white! hover:text-primary!'>
                   {link.label}
                 </CTALink>
               ))}
@@ -87,9 +82,7 @@ export function Footer() {
             <CTALink
               href='mailto:fdshah10@gmail.com'
               external
-              className='text-white! hover:text-primary!'
-              trackEvent='contact-email-click'
-              trackData={{ location: 'footer' }}>
+              className='text-white! hover:text-primary!'>
               fdshah10@gmail.com
             </CTALink>
             <div className='mt-4 flex items-baseline gap-2 text-sm text-white/85'>

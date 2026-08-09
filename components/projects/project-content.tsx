@@ -83,22 +83,12 @@ export function ProjectContent({
 
             <div className='flex flex-wrap items-center gap-x-8 gap-y-4 pt-8 border-t border-border'>
               {project.liveUrl && (
-                <CTAButton
-                  href={project.liveUrl}
-                  external
-                  accent='secondary'
-                  trackEvent='project-live-click'
-                  trackData={{ slug: project.slug, location: 'detail' }}>
+                <CTAButton href={project.liveUrl} external accent='secondary'>
                   View Live
                 </CTAButton>
               )}
               {project.repoUrl && (
-                <CTAButton
-                  href={project.repoUrl}
-                  external
-                  accent='secondary'
-                  trackEvent='project-repo-click'
-                  trackData={{ slug: project.slug, location: 'detail' }}>
+                <CTAButton href={project.repoUrl} external accent='secondary'>
                   View Repository
                 </CTAButton>
               )}
@@ -107,9 +97,7 @@ export function ProjectContent({
                   href={project.githubUrl}
                   external
                   accent='secondary'
-                  leadingIcon={<GithubIcon className='h-4 w-4' />}
-                  trackEvent='project-github-click'
-                  trackData={{ slug: project.slug, location: 'detail' }}>
+                  leadingIcon={<GithubIcon className='h-4 w-4' />}>
                   Source Code
                 </CTALink>
               )}

@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 import { ArrowUpRight, Mail, MapPin } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from '@/components/shared/brand-icons';
 import { CTAButton } from '@/components/shared/cta-button';
-import { trackEvent, umamiTrackProps } from '@/lib/analytics';
 
 export function ContactSection() {
   const [contactName, setContactName] = useState('');
@@ -50,7 +49,6 @@ export function ContactSection() {
       setContactEmail('');
       setContactMessage('');
       setStatusMessage('Your message was successfully sent. Thank you!');
-      trackEvent('contact-form-submit', { result: 'success' });
     } catch (error) {
       setHasError(true);
       setStatusMessage(
@@ -58,7 +56,6 @@ export function ContactSection() {
           ? `Error sending message: ${error.message}`
           : 'Error sending message. Please try again.',
       );
-      trackEvent('contact-form-submit', { result: 'error' });
     } finally {
       setIsSubmitting(false);
     }
@@ -101,10 +98,7 @@ export function ContactSection() {
             <div className='space-y-1 pt-2 max-w-md'>
               <a
                 href='mailto:fdshah10@gmail.com'
-                className='group flex items-center justify-between py-4 border-b border-background/20 hover:border-background/60 transition-colors'
-                {...umamiTrackProps('contact-email-click', {
-                  location: 'contact-section',
-                })}>
+                className='group flex items-center justify-between py-4 border-b border-background/20 hover:border-background/60 transition-colors'>
                 <span className='flex items-center gap-3 text-base'>
                   <Mail className='h-4 w-4 opacity-60 group-hover:opacity-100 transition-opacity' />
                   fdshah10@gmail.com
@@ -116,11 +110,7 @@ export function ContactSection() {
                 href='https://www.linkedin.com/in/fenilkumar'
                 target='_blank'
                 rel='noopener noreferrer'
-                className='group flex items-center justify-between py-4 border-b border-background/20 hover:border-background/60 transition-colors'
-                {...umamiTrackProps('social-click', {
-                  network: 'linkedin',
-                  location: 'contact-section',
-                })}>
+                className='group flex items-center justify-between py-4 border-b border-background/20 hover:border-background/60 transition-colors'>
                 <span className='flex items-center gap-3 text-base'>
                   <LinkedinIcon className='h-4 w-4 opacity-60 group-hover:opacity-100 transition-opacity' />
                   LinkedIn
@@ -132,11 +122,7 @@ export function ContactSection() {
                 href='https://github.com/fshah2'
                 target='_blank'
                 rel='noopener noreferrer'
-                className='group flex items-center justify-between py-4 border-b border-background/20 hover:border-background/60 transition-colors'
-                {...umamiTrackProps('social-click', {
-                  network: 'github',
-                  location: 'contact-section',
-                })}>
+                className='group flex items-center justify-between py-4 border-b border-background/20 hover:border-background/60 transition-colors'>
                 <span className='flex items-center gap-3 text-base'>
                   <GithubIcon className='h-4 w-4 opacity-60 group-hover:opacity-100 transition-opacity' />
                   GitHub

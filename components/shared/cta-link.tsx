@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { ArrowLeft, ArrowUpRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { umamiTrackProps, type UmamiEventData } from '@/lib/analytics';
 
 type CTAAccent = 'primary' | 'secondary';
 
@@ -60,8 +59,6 @@ interface CTALinkProps {
   leadingIcon?: React.ReactNode;
   accent?: CTAAccent;
   className?: string;
-  trackEvent?: string;
-  trackData?: UmamiEventData;
 }
 
 export const CTALink = ({
@@ -72,8 +69,6 @@ export const CTALink = ({
   leadingIcon,
   accent = 'primary',
   className,
-  trackEvent,
-  trackData,
 }: CTALinkProps) => {
   const styles = cn(
     baseStyles,
@@ -81,7 +76,6 @@ export const CTALink = ({
     'group/cta',
     className,
   );
-  const trackingProps = trackEvent ? umamiTrackProps(trackEvent, trackData) : {};
 
   if (external) {
     return (
@@ -89,8 +83,7 @@ export const CTALink = ({
         href={href}
         target='_blank'
         rel='noopener noreferrer'
-        className={styles}
-        {...trackingProps}>
+        className={styles}>
         <UnderlineContent leadingIcon={leadingIcon} icon={icon} accent={accent}>
           {children}
         </UnderlineContent>
@@ -99,7 +92,7 @@ export const CTALink = ({
   }
 
   return (
-    <Link href={href} className={styles} {...trackingProps}>
+    <Link href={href} className={styles}>
       <UnderlineContent leadingIcon={leadingIcon} icon={icon} accent={accent}>
         {children}
       </UnderlineContent>

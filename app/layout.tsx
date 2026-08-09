@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from 'next';
 import { Geist, Geist_Mono, JetBrains_Mono } from 'next/font/google';
 import { ThemeProvider } from '@/components/theme-provider';
 import './globals.css';
-import Script from 'next/script';
 
 const geistSans = Geist({
   subsets: ['latin'],
@@ -84,13 +83,6 @@ export default function RootLayout({
       data-scroll-behavior='smooth'
       className={`${geistSans.variable} ${geistMono.variable} ${jetBrainsMono.variable}`}>
       <body className='font-sans antialiased bg-background'>
-        {process.env.NEXT_PUBLIC_UMAMI_ID && (
-          <Script
-            src='https://cloud.umami.is/script.js'
-            data-website-id={process.env.NEXT_PUBLIC_UMAMI_ID}
-            strategy='afterInteractive'
-          />
-        )}
         <ThemeProvider
           attribute='class'
           defaultTheme='dark'

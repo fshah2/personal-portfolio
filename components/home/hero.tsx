@@ -8,7 +8,6 @@ import { GithubIcon, LinkedinIcon } from '@/components/shared/brand-icons';
 import { CTAButton } from '@/components/shared/cta-button';
 import { CTALink } from '@/components/shared/cta-link';
 import { TechStrip } from '@/components/home/tech-strip';
-import { umamiTrackProps } from '@/lib/analytics';
 import { type Project } from '@/lib/data/projects';
 import { heroStats } from '@/lib/data/stats';
 
@@ -91,18 +90,11 @@ export function Hero({ latestProject }: HeroProps) {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
                 className='flex flex-wrap items-center gap-x-8 gap-y-4 pt-2'>
-                <CTAButton href='#contact' trackEvent='hero-contact-click'>
-                  Get in touch
-                </CTAButton>
+                <CTAButton href='#contact'>Get in touch</CTAButton>
 
                 <div className='flex items-center gap-6'>
-                  <CTALink href='/projects' trackEvent='hero-projects-click'>
-                    View my projects
-                  </CTALink>
-                  <CTALink
-                    href='https://github.com/fshah2'
-                    external
-                    trackEvent='hero-github-click'>
+                  <CTALink href='/projects'>View my projects</CTALink>
+                  <CTALink href='https://github.com/fshah2' external>
                     See my GitHub
                   </CTALink>
                 </div>
@@ -155,11 +147,7 @@ export function Hero({ latestProject }: HeroProps) {
                 {latestProject && (
                   <Link
                     href={`/projects/${latestProject.slug}`}
-                    className='group flex items-start gap-4 py-4 hover:bg-muted/40 transition-colors px-1 -mx-1'
-                    {...umamiTrackProps('project-click', {
-                      slug: latestProject.slug,
-                      location: 'hero-latest',
-                    })}>
+                    className='group flex items-start gap-4 py-4 hover:bg-muted/40 transition-colors px-1 -mx-1'>
                     <span className='flex-shrink-0 text-xs uppercase tracking-wider text-muted-foreground font-mono pt-0.5 w-20'>
                       Latest
                       <br />
@@ -194,10 +182,7 @@ export function Hero({ latestProject }: HeroProps) {
                 <div className='flex flex-col'>
                   <a
                     href='mailto:fdshah10@gmail.com'
-                    className='group flex items-center gap-3 py-2 text-sm text-foreground hover:text-primary transition-colors'
-                    {...umamiTrackProps('contact-email-click', {
-                      location: 'hero',
-                    })}>
+                    className='group flex items-center gap-3 py-2 text-sm text-foreground hover:text-primary transition-colors'>
                     <Mail className='h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0' />
                     <span className='font-mono text-xs truncate'>
                       fdshah10@gmail.com
@@ -212,11 +197,7 @@ export function Hero({ latestProject }: HeroProps) {
                     href='https://www.linkedin.com/in/fenilkumar'
                     target='_blank'
                     rel='noopener noreferrer'
-                    className='group flex items-center gap-3 py-2 text-sm text-foreground hover:text-primary transition-colors'
-                    {...umamiTrackProps('social-click', {
-                      network: 'linkedin',
-                      location: 'hero',
-                    })}>
+                    className='group flex items-center gap-3 py-2 text-sm text-foreground hover:text-primary transition-colors'>
                     <LinkedinIcon className='h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0' />
                     <span className='font-mono text-xs truncate'>
                       linkedin.com/in/fenilkumar
@@ -231,11 +212,7 @@ export function Hero({ latestProject }: HeroProps) {
                     href='https://github.com/fshah2'
                     target='_blank'
                     rel='noopener noreferrer'
-                    className='group flex items-center gap-3 py-2 text-sm text-foreground hover:text-primary transition-colors'
-                    {...umamiTrackProps('social-click', {
-                      network: 'github',
-                      location: 'hero',
-                    })}>
+                    className='group flex items-center gap-3 py-2 text-sm text-foreground hover:text-primary transition-colors'>
                     <GithubIcon className='h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0' />
                     <span className='font-mono text-xs truncate'>
                       github.com/fshah2
