@@ -63,25 +63,6 @@ This site is set up to deploy to Vercel with zero extra configuration:
 
 The contact form posts to the `app/api/contact` route, which emails the message via [Resend](https://resend.com). Without a verified sending domain, set `CONTACT_FROM_EMAIL` to Resend's `onboarding@resend.dev` sender (the default) — it delivers to the Resend account owner's address, which is the intended recipient here.
 
-## Content Structure
-
-Content lives in `content/` and is read on the server through helpers in `lib/data/`.
-
-- Project case studies live at `content/projects/<slug>/index.md`.
-- Co-located images, such as `cover.svg` or inline Markdown images, live beside their Markdown file.
-
-Each root-level `##` heading in a project's Markdown body becomes one step in the case-study stepper. Inline images should use relative Markdown paths:
-
-```md
-![Screenshot](./screenshot.png)
-```
-
-The content build script copies these assets to `public/content/<type>/<slug>/` and rewrites mirrored Markdown files with absolute image URLs. If content or inline images are changed while the dev server is already running, run:
-
-```bash
-pnpm build:content
-```
-
 ## Project Structure
 
 - `app/` contains App Router pages, layout metadata, and global CSS imports.
