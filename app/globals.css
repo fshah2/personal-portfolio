@@ -1,0 +1,393 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Light mode - warm, editorial */
+  --background: oklch(0.985 0.002 90);
+  --foreground: oklch(0.12 0.01 260);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.12 0.01 260);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.12 0.01 260);
+  --primary: oklch(0.55 0.22 195);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.6 0.28 325);
+  --secondary-foreground: oklch(0.98 0 0);
+  --muted: oklch(0.93 0.008 85);
+  --muted-foreground: oklch(0.45 0.01 260);
+  --accent: oklch(0.96 0.01 60);
+  --accent-foreground: oklch(0.12 0.01 260);
+  --destructive: oklch(0.55 0.22 25);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.92 0.005 90);
+  --input: oklch(0.92 0.005 90);
+  --ring: oklch(0.55 0.22 195);
+  --chart-1: oklch(0.55 0.22 195);
+  --chart-2: oklch(0.6 0.28 325);
+  --chart-3: oklch(0.55 0.15 145);
+  --chart-4: oklch(0.7 0.18 60);
+  --chart-5: oklch(0.5 0.2 280);
+  --radius: 0.25rem;
+
+  /* Signature colors */
+  --cyan: oklch(0.55 0.22 195);
+  --cyan-light: oklch(0.75 0.15 195);
+  --magenta: oklch(0.6 0.28 325);
+  --magenta-light: oklch(0.8 0.18 325);
+  --ink: oklch(0.12 0.01 260);
+  --paper: oklch(0.985 0.002 90);
+  --paper-light: oklch(0.985 0.002 90);
+  --paper-dark: oklch(0.1 0.015 260);
+
+  /* Sidebar */
+  --sidebar: oklch(0.98 0 0);
+  --sidebar-foreground: oklch(0.12 0.01 260);
+  --sidebar-primary: oklch(0.55 0.22 195);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.96 0.005 90);
+  --sidebar-accent-foreground: oklch(0.12 0.01 260);
+  --sidebar-border: oklch(0.92 0.005 90);
+  --sidebar-ring: oklch(0.55 0.22 195);
+}
+
+.dark {
+  /* Dark mode - deep, sophisticated */
+  --background: oklch(0.1 0.015 260);
+  --foreground: oklch(0.95 0.005 90);
+  --card: oklch(0.14 0.015 260);
+  --card-foreground: oklch(0.95 0.005 90);
+  --popover: oklch(0.14 0.015 260);
+  --popover-foreground: oklch(0.95 0.005 90);
+  --primary: oklch(0.7 0.18 195);
+  --primary-foreground: oklch(0.1 0 0);
+  --secondary: oklch(0.72 0.22 325);
+  --secondary-foreground: oklch(0.1 0 0);
+  --muted: oklch(0.21 0.012 260);
+  --muted-foreground: oklch(0.62 0.01 90);
+  --accent: oklch(0.2 0.02 260);
+  --accent-foreground: oklch(0.95 0.005 90);
+  --destructive: oklch(0.6 0.22 25);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.24 0.01 260);
+  --input: oklch(0.24 0.01 260);
+  --ring: oklch(0.7 0.18 195);
+  --chart-1: oklch(0.7 0.18 195);
+  --chart-2: oklch(0.72 0.22 325);
+  --chart-3: oklch(0.65 0.15 145);
+  --chart-4: oklch(0.75 0.15 60);
+  --chart-5: oklch(0.65 0.18 280);
+
+  /* Signature colors */
+  --cyan: oklch(0.7 0.18 195);
+  --cyan-light: oklch(0.55 0.22 195);
+  --magenta: oklch(0.72 0.22 325);
+  --magenta-light: oklch(0.6 0.28 325);
+  --ink: oklch(0.95 0.005 90);
+  --paper: oklch(0.1 0.015 260);
+  --paper-light: oklch(0.985 0.002 90);
+  --paper-dark: oklch(0.1 0.015 260);
+
+  /* Sidebar */
+  --sidebar: oklch(0.14 0.015 260);
+  --sidebar-foreground: oklch(0.95 0.005 90);
+  --sidebar-primary: oklch(0.7 0.18 195);
+  --sidebar-primary-foreground: oklch(0.1 0 0);
+  --sidebar-accent: oklch(0.18 0.01 260);
+  --sidebar-accent-foreground: oklch(0.95 0.005 90);
+  --sidebar-border: oklch(0.24 0.01 260);
+  --sidebar-ring: oklch(0.7 0.18 195);
+}
+
+@theme inline {
+  --font-sans: 'Geist', 'Geist Fallback', system-ui, sans-serif;
+  --font-serif: var(--font-jetbrains-mono, 'JetBrains Mono'), monospace;
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback', monospace;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --color-cyan: var(--cyan);
+  --color-cyan-light: var(--cyan-light);
+  --color-magenta: var(--magenta);
+  --color-magenta-light: var(--magenta-light);
+  --color-ink: var(--ink);
+  --color-paper: var(--paper);
+  --color-paper-light: var(--paper-light);
+  --color-paper-dark: var(--paper-dark);
+
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 6px);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  ::selection {
+    @apply bg-primary/20 text-foreground;
+  }
+}
+
+/* Editorial Typography */
+.headline,
+.headline-xl {
+  font-family: var(--font-serif);
+}
+
+.headline {
+  line-height: 1;
+  letter-spacing: -0.08em;
+  font-stretch: condensed;
+}
+
+.headline-xl {
+  font-size: clamp(3rem, 8vw, 7rem);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+  font-weight: 700;
+}
+
+.headline-lg {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 0.95;
+  letter-spacing: -0.07em;
+  font-weight: 700;
+}
+
+.headline-md {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  line-height: 1;
+  letter-spacing: -0.06em;
+  font-weight: 600;
+}
+
+/* Editorial Accent Line */
+.accent-line {
+  position: relative;
+}
+.accent-line::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 2rem;
+  height: 2px;
+  background: var(--cyan);
+  transform: translateY(-50%);
+}
+
+/* Number styling for editorial lists */
+.editorial-number {
+  font-family: var(--font-serif);
+  font-size: 4rem;
+  font-weight: 300;
+  line-height: 1;
+  color: var(--cyan);
+  opacity: 0.3;
+}
+
+/* Hover underline effect */
+.hover-underline {
+  position: relative;
+  display: inline;
+}
+.hover-underline::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+.hover-underline:hover::after {
+  width: 100%;
+}
+
+/* Tag/Label styling */
+.tag {
+  --tag-color: var(--primary);
+  --tag-color-foreground: var(--primary-foreground);
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--tag-color);
+  border: 1px solid oklch(from var(--tag-color) l c h / 0.3);
+  border-radius: 0;
+  background: transparent;
+  transition: all 0.2s ease;
+}
+
+.tag:hover {
+  background: var(--tag-color);
+  color: var(--tag-color-foreground);
+  border-color: var(--tag-color);
+}
+
+/* Color variants: only switch the underlying color token */
+.tag-secondary {
+  --tag-color: var(--secondary);
+  --tag-color-foreground: var(--secondary-foreground);
+}
+
+.tag-neutral {
+  --tag-color: var(--muted-foreground);
+  --tag-color-foreground: var(--background);
+  border-color: var(--border);
+}
+
+/* Fill modifier: adds tinted background; combine with any color variant */
+.tag-tinted {
+  background: oklch(from var(--tag-color) l c h / 0.1);
+}
+
+/* Solid fill: active/selected state */
+.tag-filled {
+  background: var(--tag-color);
+  color: var(--tag-color-foreground);
+  border-color: var(--tag-color);
+}
+
+/* Persistent selected state for interactive tag filters */
+.tag[aria-pressed='true'] {
+  background: oklch(from var(--tag-color) l c h / 0.95);
+  color: var(--tag-color-foreground);
+  border-color: var(--tag-color);
+}
+
+/* Divider styles */
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+}
+
+.divider-accent {
+  height: 3px;
+  width: 3rem;
+  background: var(--cyan);
+}
+
+/* Pull quote styling */
+.pull-quote {
+  position: relative;
+  padding-left: 2rem;
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-style: italic;
+  line-height: 1.4;
+}
+.pull-quote::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--cyan), var(--magenta));
+}
+
+/* Editorial prose styling */
+.prose-editorial {
+  @apply text-foreground/90;
+}
+
+.prose-editorial > *:first-child {
+  @apply mt-0;
+}
+
+/* Code block styling */
+.prose pre,
+.prose-editorial pre {
+  @apply bg-muted rounded-none border-l-2 border-l-cyan p-6 overflow-x-auto;
+}
+
+.prose code,
+.prose-editorial code {
+  @apply bg-muted px-1.5 py-0.5 rounded-none text-sm font-mono;
+}
+
+.prose pre code,
+.prose-editorial pre code {
+  @apply bg-transparent p-0 border-0;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-border rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-muted-foreground/30;
+}
+
+/* Noise texture overlay */
+.noise {
+  position: relative;
+}
+.noise::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
+}
