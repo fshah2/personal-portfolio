@@ -82,6 +82,11 @@ export function ProjectContent({
             </div>
 
             <div className='flex flex-wrap items-center gap-x-8 gap-y-4 pt-8 border-t border-border'>
+              {project.appStoreUrl && (
+                <CTAButton href={project.appStoreUrl} external accent='secondary'>
+                  Download on the App Store
+                </CTAButton>
+              )}
               {project.liveUrl && (
                 <CTAButton href={project.liveUrl} external accent='secondary'>
                   View Live

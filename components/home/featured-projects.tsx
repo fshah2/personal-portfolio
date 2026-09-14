@@ -72,7 +72,7 @@ export function FeaturedProjects({ projects }: FeaturedProjectsProps) {
               viewport={{ once: true, margin: '-50px' }}
               transition={{ delay: index * 0.1 }}
               className='group'>
-              <Link href={`/projects/${project.slug}`}>
+              <Link href={`/projects/${project.slug}`} data-cursor='view'>
                 <div className='grid lg:grid-cols-12 gap-6 py-8 border-t border-border bg-background/40 hover:bg-background/60 transition-colors -mx-6 px-6 lg:-mx-12 lg:px-12'>
                   {/* Thumbnail */}
                   <div className='lg:col-span-2'>

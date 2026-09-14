@@ -8,7 +8,7 @@ import { getAllProjects } from '@/lib/data/projects';
 export const metadata: Metadata = {
   title: 'Projects',
   description:
-    'A collection of my side projects: web apps, iOS apps, and data pipelines.',
+    'A collection of my side projects: web apps, iOS apps, data pipelines, and homelab infrastructure.',
 };
 
 export default function ProjectsPage() {

@@ -125,6 +125,7 @@ export function ProjectList({ projects: allProjects }: ProjectListProps) {
               {/* Main clickable area */}
               <Link
                 href={`/projects/${project.slug}`}
+                data-cursor='view'
                 className='absolute inset-0 z-0'
                 aria-label={`View ${project.title} project`}
               />
