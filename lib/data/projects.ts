@@ -13,6 +13,7 @@ export interface Project {
   liveUrl?: string;
   repoUrl?: string;
   githubUrl?: string;
+  appStoreUrl?: string;
   categories: string[];
   techStack: string[];
   featured?: boolean;
@@ -49,6 +50,7 @@ function readProject(slug: string): Project | undefined {
     liveUrl: data.liveUrl,
     repoUrl: data.repoUrl,
     githubUrl: data.githubUrl,
+    appStoreUrl: data.appStoreUrl,
     categories,
     techStack: data.techStack ?? [],
     featured: data.featured,

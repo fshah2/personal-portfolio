@@ -5,11 +5,11 @@ export interface SiteStat {
 
 export const heroStats: SiteStat[] = [
   {
-    value: '4+',
+    value: '5+',
     label: 'Years shipping software',
   },
   {
-    value: '5',
+    value: '7',
     label: 'Side projects shipped',
   },
   {

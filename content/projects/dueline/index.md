@@ -7,9 +7,10 @@ year: '2026'
 categories: ['iOS']
 techStack: ['Swift', 'SwiftUI', 'iCloud', 'Vercel']
 liveUrl: 'https://dueline.vercel.app/'
+appStoreUrl: 'https://apps.apple.com/us/app/dueline-bill-planner/id6790514982'
 githubUrl: 'https://github.com/fshah2/dueline-public-website'
 featured: true
-order: 2
+order: 1
 keyTakeaways:
   - 'Privacy can be a feature: no accounts and no analytics is a genuine differentiator in personal-finance apps.'
   - 'On-device storage with optional iCloud sync gives cross-device continuity without ever running a server.'
@@ -18,7 +19,7 @@ keyTakeaways:
 
 Most personal-finance apps want an account, your email, and a analytics SDK before they'll let you log a single bill. Dueline is my answer to that: a native iOS app that keeps everything on your device, syncs privately through your own iCloud, and asks for nothing in return.
 
-The [marketing site](https://dueline.vercel.app/) is live, and the app is pending App Store release (iOS 18+).
+Dueline is now [live on the App Store](https://apps.apple.com/us/app/dueline-bill-planner/id6790514982) (iOS 18+), alongside its [marketing site](https://dueline.vercel.app/).
 
 ## What it does
 
@@ -42,8 +43,8 @@ The app is built with **Swift** and **SwiftUI**, using iCloud for optional cross
 
 ## Shipping the whole surface
 
-An app isn't just the binary. Getting Dueline ready for release meant also building the marketing site (deployed on **Vercel**), writing the privacy story clearly, and preparing the App Store listing. Owning that full surface (product, site, and positioning) is a big part of what makes shipping a real app different from building a feature.
+An app isn't just the binary. Shipping Dueline meant also building the marketing site (deployed on **Vercel**), writing the privacy story clearly, and taking the App Store listing through review. Owning that full surface (product, site, and positioning) is a big part of what makes shipping a real app different from building a feature.
 
 ## What comes next
 
-The immediate milestone is the App Store release. After that, the roadmap is about depth on the tracking side (richer analytics and smarter reminders) while holding the line on the privacy-first, no-account model that makes Dueline what it is.
+Now that Dueline is live on the App Store, the roadmap is about depth on the tracking side (richer analytics and smarter reminders) while holding the line on the privacy-first, no-account model that makes Dueline what it is.

@@ -391,3 +391,99 @@
   opacity: 0.03;
   pointer-events: none;
 }
+
+/* 
+  Custom cursor (dot + trailing ring). See components/shared/custom-cursor.tsx.
+  Active only for fine pointers with hover; native cursor stays on touch.
+*/
+@media (hover: hover) and (pointer: fine) {
+  html.cc-on,
+  html.cc-on * {
+    cursor: none;
+  }
+  /* keep a usable text caret in form fields */
+  html.cc-on input,
+  html.cc-on textarea,
+  html.cc-on [contenteditable='true'] {
+    cursor: text;
+  }
+}
+
+.cc-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  will-change: transform;
+}
+
+.cc-dot {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--primary);
+  transition: opacity 0.2s ease;
+}
+
+.cc-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  margin: -18px 0 0 -18px;
+  border: 1.5px solid var(--primary);
+  border-radius: 50%;
+  opacity: 0.6;
+  transition: width 0.28s cubic-bezier(0.22, 0.61, 0.36, 1),
+    height 0.28s cubic-bezier(0.22, 0.61, 0.36, 1),
+    margin 0.28s cubic-bezier(0.22, 0.61, 0.36, 1),
+    border-radius 0.28s ease, background 0.2s ease, opacity 0.2s ease;
+}
+
+.cc-label {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  font-family: ui-monospace, 'JetBrains Mono', 'SF Mono', Menlo, monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--primary-foreground);
+  opacity: 0;
+  transition: opacity 0.18s ease;
+  white-space: nowrap;
+}
+
+/* over a link/button — ring swells and tints */
+body.cc-link .cc-ring {
+  width: 62px;
+  height: 62px;
+  margin: -31px 0 0 -31px;
+  opacity: 1;
+  background: color-mix(in oklch, var(--primary) 14%, transparent);
+}
+
+/* over a project card: ring becomes a filled "View" chip */
+body.cc-view .cc-ring {
+  width: 78px;
+  height: 38px;
+  margin: -19px 0 0 -39px;
+  border-radius: 10px;
+  opacity: 1;
+  background: var(--primary);
+}
+body.cc-view .cc-dot {
+  opacity: 0;
+}
+body.cc-view .cc-label {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cc-ring {
+    transition: none;
+  }
+}

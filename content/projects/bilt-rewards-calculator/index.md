@@ -9,7 +9,7 @@ techStack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Vitest']
 liveUrl: 'https://www.calculatebiltrewards.online/'
 githubUrl: 'https://github.com/fshah2/bilt-rewards-calculator'
 featured: true
-order: 1
+order: 2
 keyTakeaways:
   - 'Encoding real-world reward rules into a small, pure rules engine keeps the math testable and the UI dumb.'
   - 'A frontend-only tool with no backend, auth, or scraping is fast to build, cheap to host, and trivial to reason about.'

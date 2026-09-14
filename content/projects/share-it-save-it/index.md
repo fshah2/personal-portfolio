@@ -6,6 +6,8 @@ coverImage: 'cover.svg'
 year: '2025'
 categories: ['iOS']
 techStack: ['Swift', 'iOS', 'Local Storage']
+liveUrl: 'https://shareitsaveit.netlify.app/'
+appStoreUrl: 'https://apps.apple.com/us/app/shareitsaveit/id6755452662'
 githubUrl: 'https://github.com/fshah2/shareitsaveit-public-site'
 featured: true
 order: 5

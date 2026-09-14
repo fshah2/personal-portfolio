@@ -77,9 +77,9 @@ export function Hero({ latestProject }: HeroProps) {
                 integrations and automation pipelines on AWS. On the side I ship
                 projects like a{' '}
                 <CTALink
-                  href='/projects/bilt-rewards-calculator'
+                  href='/projects/dueline'
                   className='text-lg text-primary hover:text-primary/80 transition-colors'>
-                  Bilt Rewards calculator
+                  Dueline: bill tracker App
                 </CTALink>
                 .
               </motion.p>

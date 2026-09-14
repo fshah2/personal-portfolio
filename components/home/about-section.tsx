@@ -81,7 +81,7 @@ export function AboutSection() {
               className='space-y-6'>
               <p className='text-xl lg:text-2xl font-serif leading-relaxed'>
                 I&apos;m a Senior Software Engineer based in Houston, Texas, with
-                4+ years shipping business-critical, full-stack systems in
+                5+ years shipping business-critical, full-stack systems in
                 production across C#/.NET, TypeScript, and Python.
               </p>
               <div className='space-y-4 text-muted-foreground leading-relaxed'>
@@ -110,14 +110,26 @@ export function AboutSection() {
                   systems that make real work faster.
                 </p>
                 <p>
-                  Outside of work I build side projects like a{' '}
+                  Outside of work I build side projects like{' '}
                   <CTALink
-                    href='/projects/bilt-rewards-calculator'
+                    href='/projects/dueline'
                     className='text-base text-primary hover:text-primary/80 transition-colors'>
-                    Bilt Rewards calculator
+                    Dueline
                   </CTALink>
-                  , a Texas grid-status dashboard, an electricity-pricing ETL,
-                  and iOS apps. I hold a B.S. in Computer Science from the
+                  , a privacy-first iOS bill tracker on the App Store, a{' '}
+                  <CTALink
+                    href='/projects/premier-edge-notary'
+                    className='text-base text-primary hover:text-primary/80 transition-colors'>
+                    website for my mobile notary business
+                  </CTALink>
+                  , and a self-hosted{' '}
+                  <CTALink
+                    href='/projects/homelab-nas'
+                    className='text-base text-primary hover:text-primary/80 transition-colors'>
+                    homelab NAS
+                  </CTALink>
+                  , plus a Bilt Rewards calculator and a couple of Texas energy
+                  data tools. I hold a B.S. in Computer Science from the
                   University of Houston.
                 </p>
               </div>

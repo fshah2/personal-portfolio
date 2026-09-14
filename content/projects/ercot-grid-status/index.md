@@ -9,7 +9,7 @@ techStack: ['TypeScript', 'GitHub Actions', 'GitHub Pages', 'ERCOT API']
 liveUrl: 'https://fshah2.github.io/ercot-grid-status/'
 githubUrl: 'https://github.com/fshah2/ercot-grid-status'
 featured: true
-order: 3
+order: 7
 keyTakeaways:
   - 'GitHub Actions plus GitHub Pages can run a real, self-updating data product with no servers and no hosting bill.'
   - 'Committing rolling JSON snapshots to the repo gives you free history and a fully transparent data trail.'
